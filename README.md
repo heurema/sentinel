@@ -1,8 +1,11 @@
 # sentinel
 
+[![version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/heurema/sentinel)
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 AI Workstation Security Audit — deterministic checks for secrets exposure, MCP trust, plugin permissions, hook coverage, trust boundaries, and configuration hygiene.
 
-## Installation
+## Install
 
 <!-- INSTALL:START -->
 ```bash
@@ -10,7 +13,7 @@ claude plugin add heurema/sentinel
 ```
 <!-- INSTALL:END -->
 
-## Quick Start
+## Quick start
 
 ```
 /sentinel              # Run full security audit
@@ -18,6 +21,15 @@ claude plugin add heurema/sentinel
 /sentinel-fix <run_id> # Guided remediation walkthrough
 /sentinel-diff         # Compare with previous audit
 ```
+
+## Commands
+
+| Command | Description |
+|---------|-------------|
+| `/sentinel` | Run full security audit with terminal scorecard |
+| `/sentinel --deep` | Audit with LLM risk explanation |
+| `/sentinel-fix <run_id>` | Guided remediation for audit findings |
+| `/sentinel-diff` | Compare current audit with previous run |
 
 ## Features
 
@@ -60,7 +72,7 @@ Optional `~/.sentinel/config.json`:
 - `--deep` mode sends aggregate findings (no raw secrets) to the LLM
 - No network calls during base audit
 
-## See Also
+## See also
 
 - [How it works](docs/how-it-works.md)
 - [Reference](docs/reference.md)
