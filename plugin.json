@@ -1,0 +1,12 @@
+{
+  "name": "sentinel",
+  "description": "AI Workstation Security Audit — deterministic checks for secrets exposure, MCP trust, plugin permissions, hook coverage, trust boundaries, and configuration hygiene",
+  "version": "0.1.0",
+  "author": {
+    "name": "heurema"
+  },
+  "homepage": "https://github.com/heurema/sentinel",
+  "repository": "https://github.com/heurema/sentinel",
+  "license": "MIT",
+  "keywords": ["security", "audit", "secrets", "mcp", "hooks", "plugins"]
+}
