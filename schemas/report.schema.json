@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "meta", "plan", "results", "scoring", "reliability", "reliability_details", "verdict", "verdict_reasons"],
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "meta": {
+      "type": "object",
+      "required": ["run_id", "completed_at", "sentinel_version", "registry_hash", "scoring_version", "platform", "hostname", "scan_roots", "effective_config", "config_sources"],
+      "properties": {
+        "run_id": { "type": "string", "pattern": "^[0-9]{8}T[0-9]{6}Z$" },
+        "completed_at": { "type": "string", "format": "date-time" },
+        "sentinel_version": { "type": "string" },
+        "registry_hash": { "type": "string" },
+        "scoring_version": { "type": "integer" },
+        "platform": { "type": "string", "enum": ["darwin", "linux"] },
+        "hostname": { "type": "string" },
+        "scan_roots": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "effective_config": { "type": "object" },
+        "config_sources": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "plan": {
+      "type": "object",
+      "required": ["total", "executed", "skipped", "excluded"],
+      "properties": {
+        "total": { "type": "integer" },
+        "executed": { "type": "integer" },
+        "skipped": { "type": "integer" },
+        "excluded": { "type": "array", "items": { "type": "object", "properties": { "check_id": { "type": "string" }, "reason": { "type": "string" } } } }
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["check_id", "title", "category", "status", "finding_id", "fingerprint_version", "duration_ms"],
+        "properties": {
+          "check_id": { "type": "string" },
+          "title": { "type": "string" },
+          "category": { "type": "string" },
+          "status": { "type": "string", "enum": ["PASS", "WARN", "FAIL", "SKIP", "UNSUPPORTED", "ERROR"] },
+          "severity": { "type": "string", "enum": ["critical", "high", "medium", "low"] },
+          "finding_id": { "type": "string", "pattern": "^[0-9a-f]{12}$" },
+          "fingerprint_version": { "type": "integer", "const": 1 },
+          "duration_ms": { "type": "integer" },
+          "evidence": { "type": "array" },
+          "remediation": { "type": "object" },
+          "error_kind": { "type": "string", "enum": ["timeout", "invalid_json", "nonzero_exit", "oversized_output"] }
+        }
+      }
+    },
+    "scoring": {
+      "type": "object",
+      "required": ["total", "by_category"],
+      "properties": {
+        "total": { "type": "number", "minimum": 0, "maximum": 100 },
+        "by_category": { "type": "object" }
+      }
+    },
+    "reliability": { "type": "number", "minimum": 0, "maximum": 1 },
+    "reliability_details": {
+      "type": "object",
+      "required": ["planned", "assessed", "errors"],
+      "properties": {
+        "planned": { "type": "integer" },
+        "assessed": { "type": "integer" },
+        "errors": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "verdict": { "type": "string", "enum": ["PASS", "WARN", "FAIL", "UNRELIABLE", "ABORTED"] },
+    "verdict_reasons": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
