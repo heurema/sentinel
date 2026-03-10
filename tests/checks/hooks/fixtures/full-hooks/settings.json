@@ -1,0 +1,1 @@
+{"hooks":{"PreToolUse":[{"matcher":"Bash","command":"echo ok"},{"matcher":"Write","command":"echo ok"},{"matcher":"Edit","command":"echo ok"},{"matcher":"NotebookEdit","command":"echo ok"}]}}
