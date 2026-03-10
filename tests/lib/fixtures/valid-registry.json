@@ -1,0 +1,4 @@
+[
+  {"id": "mock-pass", "file": "mock-check-pass.sh", "category": "secrets", "severity_default": "critical", "weight": 10, "timeout_ms": 5000, "optional": false, "platforms": ["darwin", "linux"], "default_enabled": true},
+  {"id": "mock-fail", "file": "mock-check-fail.sh", "category": "secrets", "severity_default": "high", "weight": 8, "timeout_ms": 5000, "optional": false, "platforms": ["darwin", "linux"], "default_enabled": true}
+]
