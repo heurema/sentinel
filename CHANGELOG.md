@@ -1,12 +1,10 @@
 # Changelog
 
-## [0.1.0] - 2026-03-10
+## [0.1.0] — 2026-03-10
 
-### Added
+Initial release:
 - 18 core security checks across 6 categories
-- Deterministic scoring with hard-gate verdicts (PASS/WARN/FAIL/UNRELIABLE/ABORTED)
+- Deterministic scoring with hard-gate verdicts
 - JSON-canonical reports with terminal scorecard
-- `/sentinel` main audit orchestrator skill
-- `/sentinel-fix` guided remediation skill
-- `/sentinel-diff` report comparison skill
+- `/sentinel`, `/sentinel-fix`, `/sentinel-diff` skills
 - SessionStart hook for stale audit reminders

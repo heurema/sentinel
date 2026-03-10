@@ -63,6 +63,7 @@ Optional `~/.sentinel/config.json`:
 ## See Also
 
 - [How it works](docs/how-it-works.md)
+- [Reference](docs/reference.md)
 - [Check contract](docs/check-contract.md)
 - [Adding checks](docs/adding-checks.md)
 
