@@ -1,0 +1,10 @@
+{
+  "hooks": [
+    {
+      "type": "SessionStart",
+      "matcher": "startup|resume",
+      "command": "python3 -c \"import json,os,sys,datetime;d=os.path.expanduser('~/.sentinel/reports');r=sorted([f for f in os.listdir(d) if f.endswith('.json')]) if os.path.isdir(d) else [];sys.exit(0) if not r else None;j=json.load(open(os.path.join(d,r[-1])));t=datetime.datetime.fromisoformat(j['meta']['completed_at'].replace('Z','+00:00'));age=(datetime.datetime.now(datetime.timezone.utc)-t).days;print(f'Sentinel: last audit was {age} days ago. Run /sentinel to re-scan.') if age>7 else sys.exit(0)\" 2>/dev/null || true",
+      "timeout": 5000
+    }
+  ]
+}
