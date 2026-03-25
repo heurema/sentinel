@@ -1,9 +1,19 @@
-# sentinel
+```
+                    __  _            __
+   ________  ____  / /_(_)___  ___  / /
+  / ___/ _ \/ __ \/ __/ / __ \/ _ \/ /
+ (__  )  __/ / / / /_/ / / / /  __/ /
+/____/\___/_/ /_/\__/_/_/ /_/\___/_/
+```
 
-[![version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/heurema/sentinel)
-[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+**AI workstation security audit.**
 
-AI Workstation Security Audit — deterministic checks for secrets exposure, MCP trust, plugin permissions, hook coverage, trust boundaries, and configuration hygiene.
+[![Version](https://img.shields.io/badge/version-0.1.0-5b21b6?style=flat-square)](https://github.com/heurema/sentinel)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+> Deterministic checks for secrets exposure, MCP trust, plugin permissions, hook coverage, trust boundaries, and configuration hygiene.
+
+---
 
 ## Install
 
